@@ -8,12 +8,16 @@ const BookForm = ({ book }) => {
 
   const [newTitle, setNewTitle] = useState('');
   const [newMessage, setNewMessage] = useState('');
+  const [newCategory, setNewCategory] = useState('');
+  const [newPrice, setNewPrice] = useState('');
 
-  const handleEdit = (e) => {
+  const handleEdit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
       newTitle,
       newMessage,
+      newCategory,
+      newPrice,
     };
     dispatch(update(book.id, data));
   };
@@ -27,6 +31,24 @@ const BookForm = ({ book }) => {
           name="title"
           placeholder="Enter Book Title"
           onChange={(e) => setNewTitle(e.target.value)}
+        />
+        <br /> <br />
+        <input
+          required
+          value={newCategory}
+          type="text"
+          name="category"
+          placeholder="Enter Book Category"
+          onChange={(e) => setNewCategory(e.target.value)}
+        />
+        <br /> <br />
+        <input
+          required
+          value={newPrice}
+          type="text"
+          name="price"
+          placeholder="Enter Book Price"
+          onChange={(e) => setNewPrice(e.target.value)}
         />
         <br /> <br />
         <textarea

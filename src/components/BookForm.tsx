@@ -8,17 +8,21 @@ const BookForm = () => {
   const [category, setCategory] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
       id: new Date(),
       title,
       message,
+      price,
+      category,
       editing: false,
     };
     dispatch(addBook(data));
     setTitle('');
     setMessage('');
+    setPrice('');
+    setCategory('');
   };
   return (
     <div>
@@ -36,7 +40,7 @@ const BookForm = () => {
         <input
           required
           value={price}
-          type="text"
+          type="number"
           name="price"
           placeholder="Enter Book Price"
           onChange={(e) => setPrice(e.target.value)}

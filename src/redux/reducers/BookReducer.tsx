@@ -16,6 +16,8 @@ const bookReducer = (state = [], action) => {
             ...book,
             title: action.data.newTitle,
             message: action.data.newMessage,
+            category: action.data.newCategory,
+            price: action.data.newprice,
             editing: !book.editing,
           };
         } else return book;
