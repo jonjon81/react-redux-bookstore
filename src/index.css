@@ -1,0 +1,15 @@
+.modal-1 {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+}
+
+.modal-1 form {
+  background: red;
+  width: 300px;
+  padding: 2rem;
+  margin: auto;
+}

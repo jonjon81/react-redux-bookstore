@@ -24,12 +24,13 @@ const BookForm = () => {
     setMessage('');
     setPrice('');
     setCategory('');
+    setShow(!show);
   };
   return (
     <>
-      <button onClick={() => setShow(!show)}>Show Add Form</button>
+      <button onClick={() => setShow(!show)}>Add a book</button>
       {show && (
-        <div>
+        <div className="modal-1">
           <form onSubmit={handleSubmit}>
             <input
               required
@@ -69,6 +70,7 @@ const BookForm = () => {
             />
             <br /> <br />
             <button>Add Book now</button>
+            <button onClick={() => setShow(!show)}>Cancel</button>
           </form>
         </div>
       )}
