@@ -2,7 +2,7 @@ export const addBook = (data: {
   id: Date;
   title: string;
   message: string;
-  price: string;
+  price: number;
   category: string;
   editing: boolean;
 }) => {
