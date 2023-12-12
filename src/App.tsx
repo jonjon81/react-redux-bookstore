@@ -1,7 +1,13 @@
-import BookList from './components/BookList';
+import './index.css';
+import BookForm from './components/BookForm';
+import AllBooks from './components/AllBooks';
 
-const App = () => {
-  return <BookList />;
-};
-
-export default App;
+export default function App() {
+  return (
+    <div className="App">
+      <h1>Bookstore</h1>
+      <BookForm />
+      <AllBooks />
+    </div>
+  );
+}
