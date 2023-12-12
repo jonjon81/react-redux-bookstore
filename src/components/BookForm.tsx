@@ -28,7 +28,9 @@ const BookForm = () => {
   };
   return (
     <>
-      <button onClick={() => setShow(!show)}>Add a book</button>
+      <button type="button" className="btn btn-success" onClick={() => setShow(!show)}>
+        Add a book
+      </button>
       {show && (
         <div className="modal-1">
           <form onSubmit={handleSubmit}>
