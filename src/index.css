@@ -9,9 +9,26 @@
   z-index: 100;
 }
 
+.modal-1 input,
+.modal-1 textarea {
+  padding: 8px;
+  width: 100%;
+}
+
 .modal-1 form {
-  background: red;
-  width: 300px;
+  background: #fff;
   padding: 2rem;
   margin: auto;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.modal-1 .btn {
+  width: 100%;
+}
+
+.modal-1 .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }

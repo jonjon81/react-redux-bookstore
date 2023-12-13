@@ -10,7 +10,7 @@ const BookForm = ({ book }) => {
   const [newCategory, setNewCategory] = useState(book.category);
   const [newPrice, setNewPrice] = useState(book.price);
 
-  const handleEdit = (e: { preventDefault: () => void }) => {
+  const handleEdit = (e) => {
     e.preventDefault();
     const data = {
       newTitle,
@@ -22,7 +22,7 @@ const BookForm = ({ book }) => {
   };
   return (
     <div>
-      <form onSubmit={handleEdit}>
+      <form>
         <input
           required
           value={newTitle}
@@ -60,7 +60,7 @@ const BookForm = ({ book }) => {
           onChange={(e) => setNewMessage(e.target.value)}
         />
         <br /> <br />
-        <button>Update</button>
+        <button onClick={handleEdit}>Update</button>
         <button onClick={() => dispatch(editBook(book.id))}>Cancel</button>
       </form>
     </div>

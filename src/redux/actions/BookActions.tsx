@@ -28,6 +28,7 @@ export const update = (
   data: { newTitle: string; newMessage: string; newCategory: string; newPrice: string }
 ) => {
   console.log(id);
+  console.dir(data);
   return {
     type: 'UPDATE',
     payload: id,

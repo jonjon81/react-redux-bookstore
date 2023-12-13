@@ -10,7 +10,7 @@ const Book = ({ book }) => {
         <h5 className="card-title">{book.title}</h5>
         <p className="card-text">{book.message}</p>
         <p>{book.category}</p>
-        <p>Price: {book.price}</p>
+        <p>{book.price}</p>
         <button type="button" className="btn deleteBtn btn-danger" onClick={() => dispatch(deleteBook(book.id))}>
           Delete
         </button>
