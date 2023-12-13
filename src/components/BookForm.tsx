@@ -9,7 +9,7 @@ const BookForm = () => {
   const [message, setMessage] = useState('');
   const [show, setShow] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
       id: new Date(),
@@ -33,7 +33,7 @@ const BookForm = () => {
       </button>
       {show && (
         <div className="modal-1">
-          <form>
+          <form onSubmit={handleSubmit}>
             <button onClick={() => setShow(!show)} className="btn-close"></button>
             <h2 className="mb-3">Add New Book</h2>
             <input
@@ -73,9 +73,7 @@ const BookForm = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
             <br /> <br />
-            <button onClick={handleSubmit} type="button" className="btn btn-primary mb-2">
-              Add Book now
-            </button>
+            <button className="btn btn-primary mb-2">Add Book now</button>
             <button type="button" className="btn btn-secondary" onClick={() => setShow(!show)}>
               Cancel
             </button>
