@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/actions/BookActions';
-import { blockInvalidChar } from '../utils/helpers';
 
 const BookForm = () => {
   const dispatch = useDispatch();
@@ -52,12 +51,10 @@ const BookForm = () => {
             <input
               required
               value={price}
-              type="number"
-              step="0.01"
+              type="text"
               name="price"
               placeholder="Enter Book Price"
               onChange={(e) => setPrice(e.target.value)}
-              onKeyDown={blockInvalidChar}
             />
             <br /> <br />
             <input
