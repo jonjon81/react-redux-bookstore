@@ -1,4 +1,10 @@
-const bookReducer = (state = [], action) => {
+const initialState = [
+  { title: 'batman', message: 'message', id: '1', category: 'action', price: 132, editing: false },
+  { title: 'superman', message: 'message', id: '1', category: 'comedy', price: 322, editing: false },
+  { title: 'flash', message: 'message', id: '1', category: 'romance', price: 453, editing: false },
+];
+
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_BOOK':
       return state.concat([action.payload]);

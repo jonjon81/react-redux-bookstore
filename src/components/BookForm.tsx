@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/actions/BookActions';
+
 const BookForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
@@ -10,6 +11,7 @@ const BookForm = () => {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
+    console.log('handle submit');
     e.preventDefault();
     const data = {
       id: new Date(),
@@ -32,8 +34,8 @@ const BookForm = () => {
         Add a book
       </button>
       {show && (
-        <div className="modal-1">
-          <form onSubmit={handleSubmit}>
+        <div className="modal-1" onClick={() => setShow(!show)}>
+          <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
             <button onClick={() => setShow(!show)} className="btn-close"></button>
             <h2 className="mb-3">Add New Book</h2>
             <input
