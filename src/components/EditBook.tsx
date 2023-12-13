@@ -57,8 +57,8 @@ const BookForm = ({ book }) => {
             required
             value={newMessage}
             name="message"
-            rows="5"
-            cols="28"
+            rows={5}
+            cols={28}
             placeholder="Enter new description"
             onChange={(e) => setNewMessage(e.target.value)}
           />
