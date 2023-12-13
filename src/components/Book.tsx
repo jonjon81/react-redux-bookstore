@@ -4,17 +4,17 @@ import { deleteBook, editBook } from '../redux/actions/BookActions';
 const Book = ({ book }) => {
   const dispatch = useDispatch();
   return (
-    <div className="card" key={book.id}>
-      <h2>{book.title}</h2>
-      <p>{book.message}</p>
-      <p>{book.price}</p>
-      <p>{book.category}</p>
-      <button className="btn editBtn" onClick={() => dispatch(editBook(book.id))}>
-        Edit
-      </button>
-      <button className="btn deleteBtn" onClick={() => dispatch(deleteBook(book.id))}>
-        Delete
-      </button>
+    <div className="card" key={book.id} onClick={() => dispatch(editBook(book.id))}>
+      <img className="card-img-top" src="..." alt="Card image cap"></img>
+      <div className="card-body">
+        <h5 className="card-title">{book.title}</h5>
+        <p className="card-text">{book.message}</p>
+        <p>{book.category}</p>
+        <p>Price: {book.price}</p>
+        <button type="button" className="btn deleteBtn btn-danger" onClick={() => dispatch(deleteBook(book.id))}>
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

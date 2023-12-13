@@ -2,7 +2,7 @@ export const addBook = (data: {
   id: Date;
   title: string;
   message: string;
-  price: number;
+  price: string;
   category: string;
   editing: boolean;
 }) => {
@@ -25,7 +25,7 @@ export const editBook = (id: any) => {
 };
 export const update = (
   id: any,
-  data: { newTitle: string; newMessage: string; newCategory: string; newPrice: number }
+  data: { newTitle: string; newMessage: string; newCategory: string; newPrice: string }
 ) => {
   console.log(id);
   return {
