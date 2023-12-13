@@ -76,6 +76,14 @@
 button.btn.deleteBtn.btn-danger {
   display: flex;
   padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+button.btn.deleteBtn.btn-danger svg {
+  font-size: 0.75rem;
 }
 
 .card-title {
