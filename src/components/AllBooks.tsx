@@ -7,7 +7,7 @@ const AllBooks = () => {
   return (
     <>
       {books.map((book) => (
-        <div className="col-md-2" key={book.id}>
+        <div className="col col-xs-6 col-sm-4 col-md-3 col-lg-2" key={book.id}>
           {<Book key={book.id} book={book} />}
           {book.editing && <EditComponent key={book.id} book={book} />}
         </div>
