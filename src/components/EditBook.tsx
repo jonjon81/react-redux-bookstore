@@ -11,7 +11,7 @@ const BookForm = (book: { title: any; message: any; category: any; price: any; i
   const [newCategory, setNewCategory] = useState(book.category);
   const [newPrice, setNewPrice] = useState(book.price);
 
-  const handleEdit = (e) => {
+  const handleEdit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
       newTitle,
@@ -60,8 +60,8 @@ const BookForm = (book: { title: any; message: any; category: any; price: any; i
             required
             value={newMessage}
             name="message"
-            rows="5"
-            cols="28"
+            rows={5}
+            cols={28}
             placeholder="Enter new description"
             onChange={(e) => setNewMessage(e.target.value)}
           />
