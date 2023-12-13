@@ -22,47 +22,55 @@ const BookForm = ({ book }) => {
   };
   return (
     <div>
-      <form>
-        <input
-          required
-          value={newTitle}
-          type="text"
-          name="title"
-          placeholder="Enter new title"
-          onChange={(e) => setNewTitle(e.target.value)}
-        />
-        <br /> <br />
-        <input
-          required
-          value={newCategory}
-          type="text"
-          name="category"
-          placeholder="Enter new category"
-          onChange={(e) => setNewCategory(e.target.value)}
-        />
-        <br /> <br />
-        <input
-          required
-          value={newPrice}
-          type="text"
-          name="price"
-          placeholder="Enter new price"
-          onChange={(e) => setNewPrice(e.target.value)}
-        />
-        <br /> <br />
-        <textarea
-          required
-          value={newMessage}
-          name="message"
-          rows="5"
-          cols="28"
-          placeholder="Enter new description"
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-        <br /> <br />
-        <button onClick={handleEdit}>Update</button>
-        <button onClick={() => dispatch(editBook(book.id))}>Cancel</button>
-      </form>
+      <div onClick={() => dispatch(editBook(book.id))} className="modal-1">
+        <form onClick={(e) => e.stopPropagation()}>
+          <button onClick={() => dispatch(editBook(book.id))} className="btn-close"></button>
+          <h2 className="mb-3">Edit Book</h2>
+          <input
+            required
+            value={newTitle}
+            type="text"
+            name="title"
+            placeholder="Enter new title"
+            onChange={(e) => setNewTitle(e.target.value)}
+          />
+          <br /> <br />
+          <input
+            required
+            value={newCategory}
+            type="text"
+            name="category"
+            placeholder="Enter new category"
+            onChange={(e) => setNewCategory(e.target.value)}
+          />
+          <br /> <br />
+          <input
+            required
+            value={newPrice}
+            type="text"
+            name="price"
+            placeholder="Enter new price"
+            onChange={(e) => setNewPrice(e.target.value)}
+          />
+          <br /> <br />
+          <textarea
+            required
+            value={newMessage}
+            name="message"
+            rows="5"
+            cols="28"
+            placeholder="Enter new description"
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <br /> <br />
+          <button className="btn btn-primary mb-2" onClick={handleEdit}>
+            Update
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => dispatch(editBook(book.id))}>
+            Cancel
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

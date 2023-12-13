@@ -11,7 +11,6 @@ const BookForm = () => {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
-    console.log('handle submit');
     e.preventDefault();
     const data = {
       id: new Date(),
@@ -30,9 +29,11 @@ const BookForm = () => {
   };
   return (
     <>
-      <button type="button" className="btn btn-success" onClick={() => setShow(!show)}>
-        Add a book
-      </button>
+      <div className="button-container mb-3">
+        <button type="button" className="btn btn-primary" onClick={() => setShow(!show)}>
+          Add a book
+        </button>
+      </div>
       {show && (
         <div className="modal-1" onClick={() => setShow(!show)}>
           <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>

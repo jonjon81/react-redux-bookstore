@@ -1,7 +1,31 @@
 const initialState = [
-  { title: 'batman', message: 'message', id: '1', category: 'action', price: 132, editing: false },
-  { title: 'superman', message: 'message', id: '1', category: 'comedy', price: 322, editing: false },
-  { title: 'flash', message: 'message', id: '1', category: 'romance', price: 453, editing: false },
+  {
+    title: 'batman',
+    message:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil dolorum minus obcaecati sequi esse iusto dignissimos doloribus, sit quasi deleniti qui consequuntur.',
+    id: '1',
+    category: 'action',
+    price: 132,
+    editing: false,
+  },
+  {
+    title: 'superman',
+    message:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum odit, placeat praesentium in eos repellat cumque labore alias hic ad vero error!',
+    id: '2',
+    category: 'comedy',
+    price: 322,
+    editing: false,
+  },
+  {
+    title: 'flash',
+    message:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam incidunt, officia alias animi rem quo sint dolores fuga voluptate repudiandae laudantium deleniti.',
+    id: '3',
+    category: 'romance',
+    price: 453,
+    editing: false,
+  },
 ];
 
 const bookReducer = (state = initialState, action) => {
