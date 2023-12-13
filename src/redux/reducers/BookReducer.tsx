@@ -1,29 +1,29 @@
 const initialState = [
   {
-    title: 'batman',
+    title: 'guiness world records',
     message:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil dolorum minus obcaecati sequi esse iusto dignissimos doloribus, sit quasi deleniti qui consequuntur.',
     id: '1',
-    category: 'action',
-    price: 132,
+    category: 'fiction',
+    price: 22.99,
     editing: false,
   },
   {
-    title: 'superman',
+    title: 'food for live',
     message:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum odit, placeat praesentium in eos repellat cumque labore alias hic ad vero error!',
     id: '2',
-    category: 'comedy',
-    price: 322,
+    category: 'health',
+    price: 10.55,
     editing: false,
   },
   {
-    title: 'flash',
+    title: 'Baking Yesteryear',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam incidunt, officia alias animi rem quo sint dolores fuga voluptate repudiandae laudantium deleniti.',
     id: '3',
-    category: 'romance',
-    price: 453,
+    category: 'baking',
+    price: 14.25,
     editing: false,
   },
 ];
