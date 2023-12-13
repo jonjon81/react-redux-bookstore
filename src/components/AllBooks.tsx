@@ -9,8 +9,8 @@ const AllBooks = () => {
     <>
       {books.map((book: { id: Key | null | undefined; editing: any }) => (
         <div className="col-sm-6 col-md-3 col-lg-2" key={book.id}>
-          <Book book={book} />
-          {book.editing && <EditComponent book={book} />}
+          {<Book key={book.id} book={book} />}
+          {book.editing && <EditComponent key={book.id} book={book} />}
         </div>
       ))}
     </>
