@@ -3,7 +3,7 @@ import { deleteBook, editBook } from '../redux/actions/BookActions';
 import bookCover from '../../public/book-cover-1.jpg';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
-const Book = ({ book }) => {
+const Book = ({ book }: any) => {
   const dispatch = useDispatch();
   return (
     <div className="card mb-4" key={book.id}>

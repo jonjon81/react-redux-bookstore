@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBook, update } from '../redux/actions/BookActions';
+import { blockInvalidChar } from '../helper';
 
-const BookForm = ({ book }) => {
+const BookForm = ({ book }: any) => {
   const dispatch = useDispatch();
 
   const [newTitle, setNewTitle] = useState(book.title);
@@ -10,7 +11,7 @@ const BookForm = ({ book }) => {
   const [newCategory, setNewCategory] = useState(book.category);
   const [newPrice, setNewPrice] = useState(book.price);
 
-  const handleEdit = (e) => {
+  const handleEdit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
       newTitle,
@@ -37,20 +38,21 @@ const BookForm = ({ book }) => {
           <br /> <br />
           <input
             required
+            onKeyDown={blockInvalidChar}
+            value={newPrice}
+            type="number"
+            name="price"
+            placeholder="Enter new price"
+            onChange={(e) => setNewPrice(e.target.value)}
+          />
+          <br /> <br />
+          <input
+            required
             value={newCategory}
             type="text"
             name="category"
             placeholder="Enter new category"
             onChange={(e) => setNewCategory(e.target.value)}
-          />
-          <br /> <br />
-          <input
-            required
-            value={newPrice}
-            type="text"
-            name="price"
-            placeholder="Enter new price"
-            onChange={(e) => setNewPrice(e.target.value)}
           />
           <br /> <br />
           <textarea
