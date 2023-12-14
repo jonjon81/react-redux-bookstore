@@ -1,8 +1,8 @@
 export const addBook = (data: {
-  id: Date;
+  id: string;
   title: string;
   message: string;
-  price: string;
+  price: number;
   category: string;
   editing: boolean;
 }) => {
@@ -11,24 +11,22 @@ export const addBook = (data: {
     payload: data,
   };
 };
-export const deleteBook = (id: any) => {
+export const deleteBook = (id: string) => {
   return {
     type: 'DELETE_BOOK',
     payload: id,
   };
 };
-export const editBook = (id: any) => {
+export const editBook = (id: string) => {
   return {
     type: 'EDIT_BOOK',
     payload: id,
   };
 };
 export const update = (
-  id: any,
-  data: { newTitle: string; newMessage: string; newCategory: string; newPrice: string }
+  id: string,
+  data: { newTitle: string; newMessage: string; newCategory: string; newPrice: number }
 ) => {
-  console.log(id);
-  console.dir(data);
   return {
     type: 'UPDATE',
     payload: id,

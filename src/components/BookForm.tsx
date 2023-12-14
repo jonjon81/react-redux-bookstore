@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/actions/BookActions';
 import { blockInvalidChar } from '../helper';
 
-const BookForm = () => {
-  const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [price, setPrice] = useState('');
-  const [category, setCategory] = useState('');
-  const [message, setMessage] = useState('');
-  const [show, setShow] = useState(false);
+interface BookFormProps {}
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+const BookForm: FC<BookFormProps> = () => {
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState<string>('');
+  const [price, setPrice] = useState<number>();
+  const [category, setCategory] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [show, setShow] = useState<boolean>(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
       id: new Date(),
@@ -24,10 +26,11 @@ const BookForm = () => {
     dispatch(addBook(data));
     setTitle('');
     setMessage('');
-    setPrice('');
+    setPrice(0);
     setCategory('');
     setShow(!show);
   };
+
   return (
     <>
       <div className="button-container mb-3">
@@ -56,7 +59,7 @@ const BookForm = () => {
               type="number"
               name="price"
               placeholder="Enter Book Price"
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setPrice(Number(e.target.value))}
             />
             <br /> <br />
             <input
@@ -88,4 +91,5 @@ const BookForm = () => {
     </>
   );
 };
+
 export default BookForm;

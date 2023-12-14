@@ -1,4 +1,4 @@
-const initialState = [
+const initialState: Book[] = [
   {
     title: 'guiness world records',
     message:
@@ -28,7 +28,29 @@ const initialState = [
   },
 ];
 
-const bookReducer = (state = initialState, action: any) => {
+interface Book {
+  title: string;
+  message: string;
+  id: string;
+  category: string;
+  price: number;
+  editing: boolean;
+}
+
+type BookAction =
+  | { type: 'ADD_BOOK'; payload: Book }
+  | { type: 'DELETE_BOOK'; payload: string }
+  | { type: 'EDIT_BOOK'; payload: string }
+  | { type: 'UPDATE'; payload: string; data: BookUpdateData };
+
+interface BookUpdateData {
+  newTitle: string;
+  newMessage: string;
+  newCategory: string;
+  newPrice: number;
+}
+
+const bookReducer = (state: Book[] = initialState, action: BookAction): Book[] => {
   switch (action.type) {
     case 'ADD_BOOK':
       return state.concat([action.payload]);
@@ -38,10 +60,10 @@ const bookReducer = (state = initialState, action: any) => {
 
     case 'EDIT_BOOK':
       return state.map((book) => (book.id === action.payload ? { ...book, editing: !book.editing } : book));
+
     case 'UPDATE':
       return state.map((book) => {
         if (book.id === action.payload) {
-          console.log(action.payload);
           return {
             ...book,
             title: action.data.newTitle,
@@ -57,4 +79,5 @@ const bookReducer = (state = initialState, action: any) => {
       return state;
   }
 };
+
 export default bookReducer;

@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBook, update } from '../redux/actions/BookActions';
 import { blockInvalidChar } from '../helper';
 
-const BookForm = ({ book }: any) => {
+interface Book {
+  id: string;
+  title: string;
+  message: string;
+  category: string;
+  price: number;
+}
+
+interface BookFormProps {
+  book: Book;
+}
+
+const BookForm: FC<BookFormProps> = ({ book }) => {
   const dispatch = useDispatch();
 
-  const [newTitle, setNewTitle] = useState(book.title);
-  const [newMessage, setNewMessage] = useState(book.message);
-  const [newCategory, setNewCategory] = useState(book.category);
-  const [newPrice, setNewPrice] = useState(book.price);
+  const [newTitle, setNewTitle] = useState<string>(book.title);
+  const [newMessage, setNewMessage] = useState<string>(book.message);
+  const [newCategory, setNewCategory] = useState<string>(book.category);
+  const [newPrice, setNewPrice] = useState<number>(book.price);
 
-  const handleEdit = (e: { preventDefault: () => void }) => {
+  const handleEdit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const data = {
       newTitle,
@@ -21,6 +33,7 @@ const BookForm = ({ book }: any) => {
     };
     dispatch(update(book.id, data));
   };
+
   return (
     <div>
       <div onClick={() => dispatch(editBook(book.id))} className="modal-1">
@@ -43,7 +56,7 @@ const BookForm = ({ book }: any) => {
             type="number"
             name="price"
             placeholder="Enter new price"
-            onChange={(e) => setNewPrice(e.target.value)}
+            onChange={(e) => setNewPrice(Number(e.target.value))}
           />
           <br /> <br />
           <input
@@ -76,4 +89,5 @@ const BookForm = ({ book }: any) => {
     </div>
   );
 };
+
 export default BookForm;
