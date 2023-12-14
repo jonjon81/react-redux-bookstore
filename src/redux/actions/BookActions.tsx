@@ -1,5 +1,5 @@
 export const addBook = (data: {
-  id: string;
+  id: Date;
   title: string;
   message: string;
   price: number;

@@ -8,7 +8,7 @@ interface BookFormProps {}
 const BookForm: FC<BookFormProps> = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState<string>('');
-  const [price, setPrice] = useState<number>();
+  const [price, setPrice] = useState<number>(0);
   const [category, setCategory] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [show, setShow] = useState<boolean>(false);

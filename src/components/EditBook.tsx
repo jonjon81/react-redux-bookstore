@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBook, update } from '../redux/actions/BookActions';
 import { blockInvalidChar } from '../helper';
@@ -16,7 +16,7 @@ const BookForm: FC<BookFormProps> = ({ book }) => {
   const [newCategory, setNewCategory] = useState<string>(book.category);
   const [newPrice, setNewPrice] = useState<number>(book.price);
 
-  const handleEdit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleEdit = (e: any): void => {
     e.preventDefault();
     const data = {
       newTitle,
