@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBook, update } from '../redux/actions/BookActions';
-import { blockInvalidChar } from '../helper';
+import { blockInvalidChar } from '../utils/helper';
 import { Book } from '../redux/reducers/BookReducer';
 
 interface BookFormProps {

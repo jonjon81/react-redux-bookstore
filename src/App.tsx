@@ -1,5 +1,5 @@
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '/bootstrap/dist/css/bootstrap.min.css';
 import BookForm from './components/BookForm';
 import AllBooks from './components/AllBooks';
 
