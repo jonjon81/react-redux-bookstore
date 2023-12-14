@@ -2,15 +2,7 @@ import { FC } from 'react';
 import Book from './Book';
 import EditComponent from './EditBook';
 import { useSelector } from 'react-redux';
-
-interface BookProps {
-  id: string;
-  title: string;
-  price: number;
-  category: string;
-  message: string;
-  editing: boolean;
-}
+import { Book as BookProps } from '../redux/reducers/BookReducer';
 
 const AllBooks: FC = () => {
   const books: BookProps[] = useSelector((state: any) => state.bookReducer);

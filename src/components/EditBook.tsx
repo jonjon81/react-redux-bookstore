@@ -2,14 +2,7 @@ import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editBook, update } from '../redux/actions/BookActions';
 import { blockInvalidChar } from '../helper';
-
-interface Book {
-  id: string;
-  title: string;
-  message: string;
-  category: string;
-  price: number;
-}
+import { Book } from '../redux/reducers/BookReducer';
 
 interface BookFormProps {
   book: Book;

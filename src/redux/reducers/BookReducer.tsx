@@ -28,7 +28,7 @@ const initialState: Book[] = [
   },
 ];
 
-interface Book {
+export interface Book {
   title: string;
   message: string;
   id: string;
