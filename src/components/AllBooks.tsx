@@ -9,7 +9,7 @@ const AllBooks: FC = () => {
   return (
     <>
       {books.map((book: BookProps) => (
-        <div className="col col-xs-6 col-sm-4 col-md-3 col-lg-2" key={book.id}>
+        <div className="col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2" key={book.id}>
           {<Book key={book.id + '-a'} book={book} />}
           {book.editing && <EditComponent key={book.id + '-b'} book={book} />}
         </div>
